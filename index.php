@@ -24,7 +24,7 @@ switch ($_GET['fire']){
 ?>
 <html style="background-color: black">
 <body>
-<div align="center" style="vertical-align: center">
+<div align="center">
 
 <img src="/img/<?php echo $Image ?>"><br><br>
     <form action="/index.php" method="get">
