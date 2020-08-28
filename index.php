@@ -26,9 +26,9 @@ switch ($_GET['fire']){
 <body>
 <div align="center">
 
-<img src="/img/<?php echo $Image ?>"><br><br>
+<img src="/img/<?= $Image ?>"><br><br>
     <form action="/index.php" method="get">
-        <button value="<?php echo $state ?>" type="submit" name="fire" id="fire">=></button>
+        <button value="<?= $state ?>" type="submit" name="fire" id="fire">=></button>
     </form>
 </div>
 </body>
