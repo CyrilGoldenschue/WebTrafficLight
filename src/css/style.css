@@ -1,0 +1,72 @@
+.button {
+    background-color: #646777; /* Green */
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+body{
+    text-align: center;
+    background-color: darkcyan;
+}
+
+#Rectangle{
+    width: 120px;
+    background: #282823;
+    display: inline-block;
+    border-radius: 10px;
+    margin-top: 150px;
+}
+
+.Circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.ExtinctCircle {
+    background: darkgray;
+}
+
+.GreenCircle {
+    background: green;
+}
+
+.OrangeCircle {
+    background: orange;
+}
+
+.RedCircle {
+    background: red;
+}
+
+#heart {
+    position: relative;
+    width: 100px;
+    height: 90px;
+}
+#heart:before,
+#heart:after {
+    position: absolute;
+    content: "";
+    left: 50px;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background: #962193;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+#heart:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
