@@ -14,19 +14,17 @@ $animationState = $trafficLight->SetState($_GET["light"]);
     <link rel="stylesheet" href="src/css/style.css"
 </head>
 <body>
-<div>
-    <div id="Rectangle">
+<div id="Rectangle">
 
-        <div class="Circle <?= ($trafficLight->red ? "RedCircle" : "ExtinctCircle" )?>"></div>
+    <div class="Circle <?= ($trafficLight->red ? "RedCircle" : "ExtinctCircle" )?>"></div>
 
-        <div class="Circle <?=($trafficLight->yellow ? "OrangeCircle" : "ExtinctCircle" )?>"></div>
+    <div class="Circle <?=($trafficLight->yellow ? "OrangeCircle" : "ExtinctCircle" )?>"></div>
 
-        <div class="Circle <?=($trafficLight->green ? "GreenCircle" : "ExtinctCircle" )?>"></div>
+    <div class="Circle <?=($trafficLight->green ? "GreenCircle" : "ExtinctCircle" )?>"></div>
 
-    </div>
 </div>
 <br/>
-<a class="button" href="<?=$trafficLight->SetState($_GET["light"])?>">=></a
+<a class="button" href="<?=$animationState?>">=></a
 
 </body>
 </html>
