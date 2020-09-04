@@ -14,29 +14,29 @@ class TrafficLight
         switch($state)
         {
             case 0:
-                $this -> red    = "RedCircle";
-                $this -> yellow = "ExtinctCircle";
-                $this -> green  = "ExtinctCircle";
+                $this -> red    = true;
+                $this -> yellow = false;
+                $this -> green  = false;
                 break;
             case 1:
-                $this -> red    = "RedCircle";
-                $this -> yellow = "OrangeCircle";
-                $this -> green  = "ExtinctCircle";
+                $this -> red    = true;
+                $this -> yellow = true;
+                $this -> green  = false;
                 break;
             case 2:
-                $this -> red    = "ExtinctCircle";
-                $this -> yellow = "ExtinctCircle";
-                $this -> green  = "GreenCircle";
+                $this -> red    = false;
+                $this -> yellow = false;
+                $this -> green  = true;
                 break;
             case 3:
-                $this -> red    = "ExtinctCircle";
-                $this -> yellow = "OrangeCircle";
-                $this -> green  = "ExtinctCircle";
+                $this -> red    = false;
+                $this -> yellow = true;
+                $this -> green  = false;
                 break;
             default:
-                $this -> red    = "ExtinctCircle";
-                $this -> yellow = "ExtinctCircle";
-                $this -> green  = "ExtinctCircle";
+                $this -> red    = false;
+                $this -> yellow = false;
+                $this -> green  = false;
                 break;
         }
 
