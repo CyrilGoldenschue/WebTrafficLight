@@ -11,16 +11,11 @@ class TrafficLight
 
         $nextState = ($state +1) % 4;
 
-        return "/?light=".$nextState;
-    }
-
-    public function Animation($state){
-
         switch($state)
         {
             case 0:
                 $this -> red    = "RedCircle";
-                $this -> yellow= "ExtinctCircle";
+                $this -> yellow = "ExtinctCircle";
                 $this -> green  = "ExtinctCircle";
                 break;
             case 1:
@@ -44,5 +39,8 @@ class TrafficLight
                 $this -> green  = "ExtinctCircle";
                 break;
         }
+
+        return "/?light=".$nextState;
     }
+
 }

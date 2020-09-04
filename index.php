@@ -3,7 +3,7 @@ require_once('src/class/TrafficLight.php');
 
 $trafficLight = new TrafficLight();
 $animationState = $trafficLight->SetState($_GET["light"]);
-$trafficLight->Animation($_GET["light"]);
+
 
 ?>
 <!DOCTYPE html>
