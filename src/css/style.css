@@ -1,12 +1,34 @@
+
+@keyframes blinking {
+    0%{
+        background: orange;
+    }
+    50%{
+        background: darkgray;
+    }
+    100%{
+        background: orange;
+     }
+
+}
+
 .button {
     background-color: #646777; /* Green */
     color: white;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    width: 50px;
+    display: flex;
     margin-top: 20px;
     border-radius: 5px;
+    justify-content: center;
+    position: relative;
+}
+#Button{
+    display: inline-block;
+    border-radius: 10px;
+    margin-top: 0px;
 }
 
 body{
@@ -41,6 +63,10 @@ body{
 
 .OrangeCircle {
     background: orange;
+}
+
+.BlinkingCircle{
+    animation: blinking 3s infinite;
 }
 
 .RedCircle {

@@ -1,8 +1,18 @@
 <?php
+session_start();
 require_once('src/class/TrafficLight.php');
 
+
+if(isset($_GET['Pause'])){
+    $_SESSION['NewLight'] = 4;
+    $_SESSION['OldLight'] = $_SESSION['NewLight'];
+}elseif (isset($_GET['Restart'])){
+    $_SESSION['NewLight'] = 0;
+}
+
+//$_SESSION['OldLight'] = $_GET['light'];
 $trafficLight = new TrafficLight();
-$animationState = $trafficLight->SetState($_GET["light"]);
+$_SESSION['NewLight'] = $trafficLight->SetState($_SESSION['NewLight']);
 
 
 ?>
@@ -14,17 +24,22 @@ $animationState = $trafficLight->SetState($_GET["light"]);
     <link rel="stylesheet" href="src/css/style.css"
 </head>
 <body>
-<div id="Rectangle">
+    <div id="Rectangle">
 
-    <div class="Circle <?= ($trafficLight->red ? "RedCircle" : "ExtinctCircle" )?>"></div>
+        <div class="Circle <?= ($trafficLight->GetRedCircle() ? "RedCircle" : "ExtinctCircle" )?>"></div>
 
-    <div class="Circle <?=($trafficLight->yellow ? "OrangeCircle" : "ExtinctCircle" )?>"></div>
+        <div class="Circle <?=($trafficLight->GetYellowCircle() ? "OrangeCircle" : "ExtinctCircle" )?> <?= (isset($_GET['Pause']) ? "BlinkingCircle" : "" )  ?>"></div>
 
-    <div class="Circle <?=($trafficLight->green ? "GreenCircle" : "ExtinctCircle" )?>"></div>
+        <div class="Circle <?=($trafficLight->GetGreenCircle() ? "GreenCircle" : "ExtinctCircle" )?>"></div>
 
-</div>
-<br/>
-<a class="button" href="<?=$animationState?>">=></a
-
+    </div>
+    <br/>
+    <div id="Button">
+        <a class="button" href="?Next">=></a<br>
+        <a class="button" href="<?= ($_SESSION['NewLight'] == 4 ? "?Restart" : "?Pause" )?>">||</a
+    </div>
 </body>
 </html>
+<?php
+
+?>
