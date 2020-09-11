@@ -25,11 +25,11 @@ class TrafficLight
                     break;
                 case 2:
                     $this -> green  = true;
+                    $this -> pause = true;
                     $nextState = ($state +1) % 4;
                     break;
                 case 3:
                     $this -> yellow = true;
-                    $this -> pause = true;
                     $nextState = ($state +1) % 4;
                     break;
                 case 4:
