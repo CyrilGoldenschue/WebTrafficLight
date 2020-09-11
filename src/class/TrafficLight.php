@@ -33,6 +33,7 @@ class TrafficLight
                     $nextState = ($state +1) % 4;
                     break;
                 case 4:
+                    $this -> yellow = true;
                     $this -> blink = true;
                     $nextState = 4;
                     break;
