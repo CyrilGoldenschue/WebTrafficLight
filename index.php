@@ -36,7 +36,8 @@ $_SESSION['NewLight'] = $trafficLight->SetState($_SESSION['NewLight']);
     </div>
     <div id="Button">
         <a class="button <?= (isset($_GET['Pause']) ? "disabled" : "" )?>" href="?Next">=></a>
-        <a class="button <?= (isset($_GET['Pause']) ? "" : ($trafficLight->GetPauseState() ? "" : "disabled" ) )?>" href="<?= ($_SESSION['NewLight'] == 4 ? "?Restart" : "?Pause" )?>">||</a
+        <a class="button <?= (isset($_GET['Pause']) ? "" : ($trafficLight->GetPauseState() ? "" : "disabled" ) )?>" href="<?= ($_SESSION['NewLight'] == 4 ? "?Restart" : "?Pause" )?>">||</a>
+
     </div>
 </body>
 </html>

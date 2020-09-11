@@ -13,7 +13,7 @@
 }
 
 .button {
-    background-color: #646777; /* Green */
+    background-color: dodgerblue; /* Green */
     color: white;
     padding: 15px 32px;
     text-align: center;
@@ -24,6 +24,10 @@
     border-radius: 5px;
     justify-content: center;
     position: relative;
+}
+
+.button.disabled{
+    background-color: darkgrey; /* Green */
 }
 #Button{
     display: inline-block;
