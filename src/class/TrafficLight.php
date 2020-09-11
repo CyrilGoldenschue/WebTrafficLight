@@ -7,6 +7,7 @@ class TrafficLight
     private $yellow = false;
     private $green = false;
     private $blink = false;
+    private $pause = false;
 
     public function SetState($state = 0){
 
@@ -14,6 +15,7 @@ class TrafficLight
             {
                 case 0:
                     $this -> red    = true;
+                    $this -> pause = true;
                     $nextState = ($state +1) % 4;
                     break;
                 case 1:
@@ -27,6 +29,7 @@ class TrafficLight
                     break;
                 case 3:
                     $this -> yellow = true;
+                    $this -> pause = true;
                     $nextState = ($state +1) % 4;
                     break;
                 case 4:
@@ -55,6 +58,9 @@ class TrafficLight
     }
     function GetBlinkCircle(){
         return $this -> blink;
+    }
+    function GetPauseState(){
+    return $this -> pause;
     }
 
 }
