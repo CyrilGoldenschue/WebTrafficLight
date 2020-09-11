@@ -6,28 +6,31 @@ class TrafficLight
     private $red = false;
     private $yellow = false;
     private $green = false;
+    private $blink = false;
 
     public function SetState($state = 0){
-
-        $nextState = ($state +1) % 4;
 
             switch($state)
             {
                 case 0:
                     $this -> red    = true;
+                    $nextState = ($state +1) % 4;
                     break;
                 case 1:
                     $this -> red    = true;
                     $this -> yellow = true;
+                    $nextState = ($state +1) % 4;
                     break;
                 case 2:
                     $this -> green  = true;
+                    $nextState = ($state +1) % 4;
                     break;
                 case 3:
                     $this -> yellow = true;
+                    $nextState = ($state +1) % 4;
                     break;
                 case 4:
-                    $this -> yellow = true;
+                    $this -> blink = true;
                     $nextState = 4;
                     break;
                 default:
@@ -39,11 +42,7 @@ class TrafficLight
         return $nextState;
     }
 
-    function Next($state = 0){
-        $nextState = ($state +1) % 4;
 
-        return "/?light=".$nextState;
-    }
 
     function GetRedCircle(){
         return $this -> red;
@@ -53,6 +52,9 @@ class TrafficLight
     }
     function GetGreenCircle(){
         return $this -> green;
+    }
+    function GetBlinkCircle(){
+        return $this -> blink;
     }
 
 }

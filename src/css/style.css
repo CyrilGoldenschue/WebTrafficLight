@@ -1,13 +1,13 @@
 
 @keyframes blinking {
     0%{
-        background: orange;
+        opacity: 100%;
     }
     50%{
         background: darkgray;
     }
     100%{
-        background: orange;
+        opacity: 100%;
      }
 
 }
@@ -44,6 +44,14 @@ body{
     margin-top: 150px;
 }
 
+#Square{
+    width: 120px;
+    background: #282823;
+    display: inline-block;
+    border-radius: 10px;
+    margin-top: 0px;
+}
+
 .Circle {
     width: 80px;
     height: 80px;
@@ -53,8 +61,9 @@ body{
     margin-bottom: 10px;
 }
 
-.ExtinctCircle {
-    background: darkgray;
+.disabled {
+    pointer-events: none;
+    cursor: default;
 }
 
 .GreenCircle {
@@ -66,33 +75,13 @@ body{
 }
 
 .BlinkingCircle{
-    animation: blinking 3s infinite;
+    animation: blinking 1s infinite;
 }
 
 .RedCircle {
     background: red;
 }
 
-#heart {
-    position: relative;
-    width: 100px;
-    height: 90px;
-}
-#heart:before,
-#heart:after {
-    position: absolute;
-    content: "";
-    left: 50px;
-    top: 0;
-    width: 50px;
-    height: 80px;
-    background: #962193;
-    border-radius: 50px 50px 0 0;
-    transform: rotate(-45deg);
-    transform-origin: 0 100%;
-}
-#heart:after {
-    left: 0;
-    transform: rotate(45deg);
-    transform-origin: 100% 100%;
+.ExtinctCircle {
+    background: darkgray;
 }
