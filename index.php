@@ -10,14 +10,7 @@ require "Controller/Controller.php";
 if(isset($_GET['Next'])) {
 
     NextState();
-
-//}elseif (isset($_GET['Pause'])) {
-
-
-
-//}//elseif (isset($_GET['Restart'])){
-
-
+    
 }
 else {
 

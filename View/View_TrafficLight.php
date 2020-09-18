@@ -7,7 +7,6 @@ if(isset($_GET['Pause'])){
     $_SESSION['NewLight'] = 0;
 }
 
-//$_SESSION['OldLight'] = $_GET['light'];
 $trafficLight = new TrafficLight();
 $_SESSION['NewLight'] = $trafficLight->SetState($_SESSION['NewLight']);
 
@@ -41,6 +40,4 @@ $_SESSION['NewLight'] = $trafficLight->SetState($_SESSION['NewLight']);
     </div>
 </body>
 </html>
-<?php
 
-?>
