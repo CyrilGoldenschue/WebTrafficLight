@@ -8,6 +8,7 @@ class TrafficLight
     private $green = false;
     private $blink = false;
     private $pause = false;
+    private $timer = 0;
 
     public function SetState($state = 0){
 
@@ -16,20 +17,24 @@ class TrafficLight
                 case 0: //stop
                     $this -> red    = true;
                     $this -> pause = true;
+                    $this -> timer = 10000;
                     $nextState = $this -> Next($state);
                     break;
                 case 1: //set
                     $this -> red    = true;
                     $this -> yellow = true;
+                    $this -> timer = 1500;
                     $nextState = $this -> Next($state);
                     break;
                 case 2: //go
                     $this -> green  = true;
                     $this -> pause = true;
+                    $this -> timer = 5000;
                     $nextState = $this -> Next($state);
                     break;
                 case 3: //slow
                     $this -> yellow = true;
+                    $this -> timer = 1500;
                     $nextState = $this -> Next($state);
                     break;
                 case 4: //pause
@@ -65,7 +70,10 @@ class TrafficLight
         return $this -> blink;
     }
     function GetPauseState(){
-    return $this -> pause;
+        return $this -> pause;
+    }
+    function GetTimer(){
+        return $this -> timer;
     }
 
 }
