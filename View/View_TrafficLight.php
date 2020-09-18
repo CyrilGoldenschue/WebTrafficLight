@@ -1,17 +1,4 @@
-<?php
-
-if(isset($_GET['Pause'])){
-    $_SESSION['NewLight'] = 4;
-    $_SESSION['OldLight'] = $_SESSION['NewLight'];
-}elseif (isset($_GET['Restart'])){
-    $_SESSION['NewLight'] = 0;
-}
-
-$trafficLight = new TrafficLight();
-$_SESSION['NewLight'] = $trafficLight->SetState($_SESSION['NewLight']);
-
-
-?>
+<?php ?>
 <!DOCTYPE html>
 <html lang="fr" style="background-color: black">
 <head>
@@ -20,10 +7,10 @@ $_SESSION['NewLight'] = $trafficLight->SetState($_SESSION['NewLight']);
     <link rel="stylesheet" href="../Public/css/style.css">
 </head>
 <body>
-<a class="button " href="?Crossroads">Crossroads</a>
+<!--<a class="button " href="?Crossroads">Crossroads</a>-->
 
     <div>
-        <div id="Rectangle">
+        <div id="Rectangle" data-light="<?= $_SESSION['OldLight'] ?>">
 
             <div class="Circle <?= ($trafficLight->GetRedCircle() ? "RedCircle" : "ExtinctCircle" )?>"></div>
 
@@ -34,10 +21,12 @@ $_SESSION['NewLight'] = $trafficLight->SetState($_SESSION['NewLight']);
         </div>
     </div>
     <div id="Button">
-        <a class="button <?= (isset($_GET['Pause']) ? "disabled" : "" )?>" href="?Next">=></a>
-        <a class="button <?= (isset($_GET['Pause']) ? "" : ($trafficLight->GetPauseState() ? "" : "disabled" ) )?>" href="<?= ($_SESSION['NewLight'] == 4 ? "?Restart" : "?Pause" )?>">||</a>
-
+        <!--<a class="button <?= (isset($_GET['Pause']) ? "disabled" : "" )?>" href="<?= $_SESSION['Action']="Next" ?>">=></a>-->
+        <a class="button" href="<?= isset($_GET['Pause']) ? $_SESSION['Action']="Next"  : "?Pause" ?>">||</a>
     </div>
+<script src="../Public/js/Timer.js" ></script>
 </body>
 </html>
+<?php
 
+?>
