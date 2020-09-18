@@ -1,6 +1,4 @@
-let rectangle = document.getElementById('Rectangle');
-
-let timerState = rectangle.getAttribute('data-timer')
+let timerState = Rectangle.getAttribute('data-timer')
 
 
 timerLight(timerState);
